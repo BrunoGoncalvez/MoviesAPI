@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zi4DJfiEoAsIPUHwy8iTpXXDVH7M4vvyI/R+IdE/VO9x/le7fciYws98qZ8bp9SPMa7W3bmWSw2Dx2WaC/+x0g==",
+  "dgSpecHash": "xmSM/s4oCmkF+aZxkiWV9aY2psILcWIaZfSZYmLFhCZNHsef2xGWcSqwFlS0oRm5v85IlZO0b230mOE0uq57Mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HomeP\\source\\repos\\Personal.Movies.API\\Personal.Movies.API.csproj",
+  "projectFilePath": "C:\\Users\\Bruno\\source\\repos\\MoviesAPI\\Personal.Movies.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

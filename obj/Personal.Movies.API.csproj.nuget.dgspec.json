@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HomeP\\source\\repos\\Personal.Movies.API\\Personal.Movies.API.csproj": {}
+    "C:\\Users\\Bruno\\source\\repos\\MoviesAPI\\Personal.Movies.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HomeP\\source\\repos\\Personal.Movies.API\\Personal.Movies.API.csproj": {
+    "C:\\Users\\Bruno\\source\\repos\\MoviesAPI\\Personal.Movies.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HomeP\\source\\repos\\Personal.Movies.API\\Personal.Movies.API.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\source\\repos\\MoviesAPI\\Personal.Movies.API.csproj",
         "projectName": "Personal.Movies.API",
-        "projectPath": "C:\\Users\\HomeP\\source\\repos\\Personal.Movies.API\\Personal.Movies.API.csproj",
-        "packagesPath": "C:\\Users\\HomeP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HomeP\\source\\repos\\Personal.Movies.API\\obj\\",
+        "projectPath": "C:\\Users\\Bruno\\source\\repos\\MoviesAPI\\Personal.Movies.API.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bruno\\source\\repos\\MoviesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\HomeP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
