@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Personal.Movies.API.Interfaces;
+using Personal.Movies.API.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,10 @@ namespace Personal.Movies.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Services é Collection de Injeção de dependencias, Tudo que será visto pelo construtor das classes
+            services.AddSingleton<IMovieRepository, MovieRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

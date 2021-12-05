@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Personal.Movies.API.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Personal.Movies.API.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Personal.Movies.API.Controllers
 {
@@ -13,13 +9,15 @@ namespace Personal.Movies.API.Controllers
     public class MoviesController : ControllerBase
     {
 
-        readonly IList<Movie> movies = new List<Movie>
-        {
-            new Movie{Id = Guid.NewGuid(), Name = "The Lion King", Year = 2000},
-            new Movie{Id = Guid.NewGuid(), Name = "Frozen II", Year = 2017},
-            new Movie{Id = Guid.NewGuid(), Name = "MIB - Men In Black", Year = 2000}
-        };
+        private readonly IMovieRepository _repository;
 
+        public MoviesController(IMovieRepository repository)
+        {
+
+            // Toda vez que MovieController for chamado irá instaciar o repository IMovieRepository na variável local _repository
+            _repository = repository;
+
+        }
 
 
         [HttpGet]
@@ -29,7 +27,7 @@ namespace Personal.Movies.API.Controllers
             /* Poderiamos trocar IActionResult pelo tipo de retorno, ex: IEnumerable<string> -> dificil tratamento de erros */
             try
             {
-                //throw new Exception("Mensagem de erro");
+                var movies = _repository.GetAll();
                 return Ok(movies);
             }
             catch (Exception e)
@@ -40,12 +38,13 @@ namespace Personal.Movies.API.Controllers
 
         }
 
+
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
             try
             {
-                var movie = movies.FirstOrDefault(x => x.Id == id);
+                var movie = _repository.GetById(id);
 
                 if (movie == null)
                 {
