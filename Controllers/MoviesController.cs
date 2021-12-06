@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Personal.Movies.API.Interfaces;
+using Personal.Movies.API.Models;
 using System;
 
 namespace Personal.Movies.API.Controllers
@@ -58,6 +59,57 @@ namespace Personal.Movies.API.Controllers
                 return BadRequest(new { e.Message });
             }
         }
+
+
+        [HttpPost]
+        public IActionResult Post([FromBody]Movie model)
+        {
+            try
+            {
+                var movie = _repository.Create(model);
+                return Created($"api/movies/{movie.Id}", movie);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(new { e.Message });
+            }
+        }
+
+        //[HttpPut] -> Cria se não existe ou Alterar se objeto já existe
+        //[HttpPatch] -> Alterar parcial objeto já existente
+        [HttpPatch]
+        public IActionResult Patch(Guid id, [FromBody]Movie movie)
+        {
+            // Guid id -> Via Url | movie -> Via Body
+            try
+            {
+                _repository.Update(id, movie);
+                return NoContent(); // NoContent() -> Realizado com sucesso e sem retorno
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(new { e.Message });
+            }
+
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                _repository.Delete(id);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(new { e.Message });
+            }
+        }
+
 
 
     }

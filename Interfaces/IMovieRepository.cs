@@ -13,5 +13,11 @@ namespace Personal.Movies.API.Interfaces
 
         Movie GetById(Guid id);
 
+        Movie Create(Movie model);
+
+        void Update(Guid id, Movie model);
+
+        void Delete(Guid id);
+
     }
 }

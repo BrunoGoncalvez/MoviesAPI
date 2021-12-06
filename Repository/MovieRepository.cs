@@ -27,5 +27,25 @@ namespace Personal.Movies.API.Repository
         }
 
 
+        public Movie Create(Movie model)
+        {
+            model.Id = Guid.NewGuid();
+            movies.Add(model);
+            return model;
+        }
+        
+        public void Update(Guid id, Movie model)
+        {
+            var movie = GetById(id);
+            movie.Id = model.Id;
+            movie.Name = model.Name;
+            movie.Year = model.Year;
+        }
+
+        public void Delete(Guid id)
+        {
+            movies.Remove(GetById(id));
+        }
+
     }
 }
